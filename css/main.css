@@ -370,8 +370,7 @@ body {
   height: 100%;
   padding: 0;
   margin: 0;
-  font-family: "sans", sans-serif;
-  background-color: #fff;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
 }
 
 h1,
@@ -403,14 +402,6 @@ img {
   height: auto;
 }
 
-.row-mrg {
-  margin: 0;
-}
-
-.col-pdg {
-  padding: 0;
-}
-
 /* VISUALLY-HIDDEN */
 .visually-hidden {
   position: absolute;
@@ -424,11 +415,107 @@ img {
 
 /* CONTAINER */
 .container {
-  max-width: 1240px;
+  max-width: 1000px;
   width: 100%;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 25px;
+  padding-right: 25px;
   margin-left: auto;
   margin-right: auto;
+}
+
+.header {
+  padding: 10px 0;
+  border-bottom: 1px solid #dbdbdb;
+}
+
+.logo__site {
+  width: 103px;
+  height: 29px;
+}
+
+.header-form__form {
+  width: 270px;
+  height: 28px;
+  position: relative;
+  border-radius: 2px;
+  border: 1px solid #dbdbdb;
+}
+
+.header-form__input {
+  font-size: 14px;
+  width: 100%;
+  height: 100%;
+  padding-left: 30px;
+  background-color: #FAFAFA;
+  border: none;
+  outline: none;
+}
+
+.header-form__input:focus {
+  outline-color: none;
+}
+
+.header-form__input::-webkit-input-placeholder {
+  color: #8e8e8e;
+  font-weight: 100;
+  font-size: 14px;
+}
+
+.header-form__input:-ms-input-placeholder {
+  color: #8e8e8e;
+  font-weight: 100;
+  font-size: 14px;
+}
+
+.header-form__input::-ms-input-placeholder {
+  color: #8e8e8e;
+  font-weight: 100;
+  font-size: 14px;
+}
+
+.header-form__input::placeholder {
+  color: #8e8e8e;
+  font-weight: 100;
+  font-size: 14px;
+}
+
+.header-form__icon-search {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 10px;
+  color: #c2c3c5;
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.header-form__icon-close {
+  display: none;
+  font-size: 10px;
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  color: #c2c3c5;
+}
+
+.nav__item:not(:last-child) {
+  margin-right: 22px;
+}
+
+.nav__btn {
+  background-color: transparent;
+  border: none;
+}
+
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+  -webkit-appearance: none;
 }
 /*# sourceMappingURL=main.css.map */

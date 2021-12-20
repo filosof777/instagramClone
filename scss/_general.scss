@@ -19,8 +19,7 @@ body {
   height: 100%;
   padding: 0;
   margin: 0;
-  font-family: $font-body;
-  background-color: $bg-color;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
 }
 
 h1,
@@ -48,12 +47,4 @@ button {
 img {
   max-width: 100%;
   height: auto;
-}
-
-.row-mrg {
-  margin: 0;
-}
-
-.col-pdg {
-  padding: 0;
 }

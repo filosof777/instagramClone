@@ -1,7 +1,19 @@
-let elNavList = document.querySelector('.nav__list');
-let elHeaderBtn = document.querySelector('.header__btn');
+let elFormInput = document.querySelector(".header-form__input");
+let elIconSearch = document.querySelector(".header-form__icon-search");
+let elIconClose = document.querySelector(".header-form__icon-close"); 
 
-elHeaderBtn.addEventListener('click', () => {
-  elNavList.classList.toggle('show-menu');
+elFormInput.addEventListener('mouseup', () => {
+  elIconSearch.classList = ('d-none')
+  elFormInput.style.paddingLeft = '5px'
+  elIconClose.style.display = 'block'
 });
 
+elFormInput.addEventListener('mouseover', () => {
+  elIconSearch.classList = ('d-flex')
+  elFormInput.style.paddingLeft = '5px'
+  elIconClose.style.display = 'none'
+});
+
+elFormInput.addEventListener('keyup', () => {
+  console.log(elFormInput.value);
+});

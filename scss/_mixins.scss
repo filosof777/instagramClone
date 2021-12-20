@@ -4,6 +4,11 @@
   list-style: none;
 }
 
+@mixin bg-border-none {
+  background-color: transparent;
+  border: none;
+}
+
 @mixin breakpoint-down($max-lg) {
   @media only screen and (max-width: $max-lg) {
     @content;
