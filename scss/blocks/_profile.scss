@@ -164,4 +164,20 @@
     margin-left: auto;
     cursor: pointer;
   }
+
+  &__close-icon {
+    position: absolute;
+    top: -50px;
+    right: -80px;
+    width: 30px;
+    height: 30px;
+    font-style: 80px;
+    color: #ccc;
+    background-color: transparent;
+    cursor: pointer;
+  }
+
+  .fa-times::before {
+    font-size: 40px;
+  }
 }

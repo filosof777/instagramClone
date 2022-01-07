@@ -692,4 +692,20 @@ input[type="search"]::-webkit-search-results-decoration {
   margin-left: auto;
   cursor: pointer;
 }
+
+.modal-wrap__close-icon {
+  position: absolute;
+  top: -50px;
+  right: -80px;
+  width: 30px;
+  height: 30px;
+  font-style: 80px;
+  color: #ccc;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.modal-wrap .fa-times::before {
+  font-size: 40px;
+}
 /*# sourceMappingURL=main.css.map */

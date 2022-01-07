@@ -33,6 +33,47 @@ elFormInput.addEventListener('keyup', () => {
   console.log(elFormInput.value);
 });
 
+
+// function showImage(item) {
+//   elContentList.innerHTML += `
+//   <li class="content__item" id="image">
+//     <div class="content__inner">
+//       <div class="content__wrapper">
+//         <span class="content__like">
+//           <i class="fas fa-heart"></i>${item.likeCount}
+//         </span>
+//         <span class="content__coment">
+//           <i class="fas fa-comment"></i>${item.commentCount}
+//         </span>
+//       </div>
+//     </div>
+//     <img src="${item.src}" alt="img">
+//   </li>
+//   `
+// }
+
+// function showVideo(item) {
+//   `
+//   <li class="content__item" id="video">
+//     <i class="content__icons fas fa-play"></i>
+//     <div class="content__inner">
+//       <div class="content__wrapper">
+//         <span class="content__like">
+//           <i class="fas fa-heart"></i>${item.likeCount}
+//         </span>
+//         <span class="content__coment">
+//           <i class="fas fa-comment"></i>${item.commentCount}
+//         </span>
+//       </div>
+//     </div>
+//     <video>
+//       <source src="${item.src}" type="video/mp4">
+//     </video>
+//   </li>
+//   `
+// }
+// console.log(showImage());
+
 arr.forEach(item => {
   if (item.id == 'image') {
     elContentList.innerHTML += `
@@ -76,45 +117,61 @@ arr.forEach(item => {
 
 function showModal(){
   let elContentItem = document.querySelectorAll('.content__item');
+  elContentItem.forEach(item => {
+    item.addEventListener('click', (e) => {
+      if (e.target.id == 'image') {
+        let imgSrc = e.target.querySelector('img')
+        // imgSrc.addEventListener('dblclick', () => {
+        //   console.log(654);
+        // })
+        // imgSrc.addEventListener('click', (e) => {
+        //   console.log(e.target);
+        // })
+        elModalBlog.innerHTML = `
+        <div class="modal-wrap">
+        <i class="modal-wrap__close-icon fal fa-times"></i>
+          <div class="row">
+            <div class="modal-wrap__col px-0 col-7 d-flex align-items-center justify-content-center">
+              <img class="modal-wrap__img" src="${imgSrc.src}" alt="img">            
+            </div>
+            <div class="modal-wrap__col modal-wrap__comments col-5 px-0 ">
 
-elContentItem.forEach(item => {
-  item.addEventListener('click', (e) => {
-    if (e.target.id == 'image') {
-      let imgSrc = e.target.querySelector('img')
-      elModalBlog.innerHTML = `
-      <div class="modal-wrap">
-        <div class="row">
-          <div class="modal-wrap__col px-0 col-7 d-flex align-items-center justify-content-center">
-            <img class="modal-wrap__img" src="${imgSrc.src}" alt="img">            
-          </div>
-          <div class="modal-wrap__col modal-wrap__comments col-5 px-0 ">
-
+            </div>
           </div>
         </div>
-      </div>
-      `;
-      likeComment()
-    }
-    if (e.target.id == 'video') {
-      let videoSrc = e.target.querySelector('source');
-      elModalBlog.innerHTML = `
-      <div class="modal-wrap">
-        <div class="row">
-          <div class="modal-wrap__col px-0 col-7 d-flex align-items-center justify-content-center">
-          <video controls>
-            <source src="${videoSrc.src}" type="video/mp4">
-          </video>          
-          </div>
-          <div class="modal-wrap__col modal-wrap__comments col-5 px-0 ">
+        `;
+        likeComment()
+        modalClose()
+      }
+      if (e.target.id == 'video') {
+        let videoSrc = e.target.querySelector('source');
+        elModalBlog.innerHTML = `
+        <div class="modal-wrap">
+        <i class="modal-wrap__close-icon fal fa-times"></i>
+          <div class="row">
+            <div class="modal-wrap__col px-0 col-7 d-flex align-items-center justify-content-center">
+            <video controls autoplay=true>
+              <source src="${videoSrc.src}" type="video/mp4">
+            </video>          
+            </div>
+            <div class="modal-wrap__col modal-wrap__comments col-5 px-0 ">
 
+            </div>
           </div>
         </div>
-      </div>
-      `;
-      likeComment();
-    }
+        `;
+        likeComment();
+        modalClose()
+      }
+    })
   })
-})
+}
+
+function modalClose() {
+  document.querySelector('.modal-wrap__close-icon')
+  .addEventListener('click', () => {
+    elModalBlog.innerHTML = ''
+  })
 }
 
 elPostBtn.forEach(item => {
@@ -123,7 +180,7 @@ elPostBtn.forEach(item => {
       elContentList.innerHTML = "";
       arr.forEach(item => {
         if (item.id == 'video') {
-          elContentList.innerHTML += `
+          elContentList.innerHTML +=   `
           <li class="content__item" id="video">
             <i class="content__icons fas fa-play"></i>
             <div class="content__inner">
